@@ -12,8 +12,7 @@
 
     <nav>
 	<!-- <div align="left">Home | Timeline | Whiteboard | Video Chat | 3D Visualization</div> -->
-        <a href="#" id="nw">Timeline</a> | <a href="#" id="ne">Timeline Event</a> | <a href="#" id="sw">Whiteboard</a> | <a href="#" id="se">Video chat</a>
-	<div align="right">Log-in</div>
+        <a href="#">3D Model</a> | <a href="#">Timeline Event</a> | <a href="#">Whiteboard</a> | <a href="#">Video chat</a> | <a href="#">Log-In</a>
     </nav>
 
   <div class="container">
@@ -28,8 +27,7 @@
 </div>
 
 <div id="nw">
-	<h2>Timeline</h2><p></p>
-	<HR WIDTH="75%" COLOR="#FF0000" SIZE="4">
+	<h2>3D Model</h2>
 </div>
 
 <div id="sw">
@@ -40,6 +38,9 @@
 	<h2>Video Chat</h2>
 </div>
 
+<timeline>
+	<h2>Timeline</h2><p></p>
+	<HR WIDTH="75%" COLOR="#FF0000" SIZE="4">
+</timeline>
 </div>
-
 </body>
