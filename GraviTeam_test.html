@@ -7,7 +7,7 @@
 
 
     <header>
-      <h1>GraviTeam: Cassini</h1>
+      <h1>GraviTeam: Cassini</h1><p></p>
     </header>
 
     <nav>
@@ -19,11 +19,17 @@
 <div id="ne">
       <h2>Timeline - Add an Event</h2>
       <!-- add a form below the h1 -->
+      {{#if currentUser}}<p></p>
+      Logged in as {{currentUser.username}}.
       <form class="new-event">
         <input type="text" name="text" placeholder="Event Name" /><br>
         <input type="text" name="text" placeholder="Activities" /><br>
         <input type="text" name="text" placeholder="Instrument" /><br>
       </form><p></p>
+      {{else}}
+      Please <a href="#">Log-In</a> to add or edit the Mission Timeline.<p></p>
+      {{> loginButtons}}
+      {{/if}}
 </div>
 
 <div id="nw">

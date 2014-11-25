@@ -34,32 +34,32 @@ div {
 
 #nw {
   background: white; 
-  top: 10%; 
-  left: 10%; 
+  top: 0%; 
+  left: 0%; 
   right: 50%; 
   bottom: 50%
 }
 
 #ne {
   background: white; 
-  top: 10%; 
+  top: 0%; 
   left: 50%; 
-  right: 10%; 
+  right: 0%; 
   bottom: 50%
 }
 
 #sw {
   background: white; 
   top: 50%; 
-  left: 10%; 
+  left: 0%; 
   right: 50%; 
-  bottom: 10%;
+  bottom: 0%;
 }
 
 #se {
 background: white; 
-top: 50%; 
-left: 50%; 
+top: 0%; 
+left: 0%; 
 right: 10%; 
 bottom: 10%;
 }
