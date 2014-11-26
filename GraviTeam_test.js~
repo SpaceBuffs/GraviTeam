@@ -26,6 +26,12 @@ if (Meteor.isServer) {
 Tasks = new Mongo.Collection("tasks");
 
 if (Meteor.isClient) {
+  // At the bottom of the client code
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
+  });
+
+
   // This code only runs on the client
   Template.body.helpers({
     tasks: function () {
@@ -69,6 +75,5 @@ window.load = function() {
    document.getElementById('app_window').innerHTML = div3;
  }
 }
-
 
 }

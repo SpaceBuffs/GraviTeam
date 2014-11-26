@@ -19,7 +19,8 @@
 <div id="ne">
       <h2>Timeline - Add an Event</h2>
       <!-- add a form below the h1 -->
-      {{#if currentUser}}
+      {{#if currentUser}}<p></p>
+      Logged in as {{currentUser.username}}.
       <form class="new-event">
         <input type="text" name="text" placeholder="Event Name" /><br>
         <input type="text" name="text" placeholder="Activities" /><br>
