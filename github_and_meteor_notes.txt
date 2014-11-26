@@ -1,13 +1,13 @@
 github - initializing the repo
   996  git init
   997  git add README.md
-  998  git commit -m "first commit"
+  998  git commit -a -m "first commit"
   999  git remote add origin https://github.com/SpaceBuffs/GraviTeam.git
  1000  git push -u origin master
 
 github - push to the repo
- 1002  git add GraviTeam*
- 1003  git commit -m "second commit"
+ 1002  git add *.*
+ 1003  git commit -a -m "second commit"
  1004  git push -u origin master
  1005  meteor deploy sierraflynn.meteor.com
 
@@ -18,3 +18,6 @@ github - merge
 git add *
 git commit -a -m ""
 git push
+
+meteor - add a database element
+meteor add accounts-ui accounts-password
