@@ -1,6 +1,19 @@
 <!-- simple-todos.html -->
 <head>
   <title>GraviTeam</title>
+
+<!-- jQuery 1.x is required; if you already have it included in your page, no need to include this -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<!-- AWW widget -->
+<script type="text/javascript" src="https://awwapp.com/static/1.0/aww.min.js"></script>
+
+<!-- Connection to the whiteboard sharing service -->
+<script type="text/javascript" src="https://awwapp.com/nowjs/now.js"></script>
+
+<!-- CSS styles used by the widget -->
+<link rel="stylesheet" type="text/css" href="https://awwapp.com/static/1.0/aww.css"/>
+
 </head>
 
 <body>
@@ -33,12 +46,23 @@
 </div>
 
 <div id="nw">
-	<h2>3D Model</h2><p></p>
-        <img src="http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg" width="50%" height="80%">
+	<h2>3D Model</h2><p>Click on the image to enlarge.</p>
+        <a target="popup" onclick="window.open('http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg','name','width=569,height=427')">
+		<img src="http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg" width="50%" height="80%"></a>
 </div>
 
 <div id="sw">
-	<h2>Whiteboard</h2>
+	<!-- <h2>Whiteboard</h2><p></p> -->
+        <!-- the whiteboard widget will be shown inside this element -->
+        <div id="wrapper" style="width: 80%; height: 80%;"></div>
+
+        <!-- this actually initializes the widget -->
+        <script type="text/javascript">
+            $(function() {
+                /* initialize the whiteboard widget on #wrapper element */
+                var aww = $('#wrapper').awwCanvas();
+            });
+        </script>
 </div>
 
 <div id="se">
@@ -47,9 +71,10 @@
 
 </div>
 
-<timeline>
+<!-- <timeline>
 	<h2>Timeline</h2><p></p>
 	<HR WIDTH="75%" COLOR="#FF0000" SIZE="4">
 </timeline>
+-->
 
 </body>
