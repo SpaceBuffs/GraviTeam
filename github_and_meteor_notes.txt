@@ -13,3 +13,6 @@ github - push to the repo
 
 github - pull from the repo
 git pull
+
+github - merge
+
