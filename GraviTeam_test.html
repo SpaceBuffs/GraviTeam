@@ -21,6 +21,7 @@
 
     <header>
       <h1>GraviTeam: Cassini</h1><p></p>
+      
     </header>
 
     <nav>
@@ -32,27 +33,36 @@
 <div id="ne">
       <h2>Timeline - Add an Event</h2>
       <!-- add a form below the h1 -->
-      {{#if currentUser}}<p></p>
-      Logged in as {{currentUser.username}}.
+    <!--  {{#if currentUser}}<p></p>
+      Logged in as {{currentUser.username}}. --> 
       <form class="new-event">
         <input type="text" name="text" placeholder="Event Name" /><br>
         <input type="text" name="text" placeholder="Activities" /><br>
         <input type="text" name="text" placeholder="Instrument" /><br>
+
       </form><p></p>
-      {{else}}
+    <!--  {{else}}
       Please <a href="#">Log-In</a> to add or edit the Mission Timeline.<p></p>
       {{> loginButtons}}
-      {{/if}}
+      {{/if}} -->
+
 </div>
 
 <div id="nw">
-	<h2>3D Model</h2><p>Click on the image to enlarge.</p>
+	<h2>3D Model</h2><p></p>
+        <span class="close hightlightTxt">x</span>
+        <span class="mini hightlightTxt">-</span>
+        <span class="maxi hightlightTxt">+</span>
+        <p>Click on the image to enlarge.</p>
         <a target="popup" onclick="window.open('http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg','name','width=569,height=427')">
 		<img src="http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg" width="50%" height="80%"></a>
 </div>
 
 <div id="sw">
 	<!-- <h2>Whiteboard</h2><p></p> -->
+  <span class="close hightlightTxt">x</span>
+  <span class="mini hightlightTxt">-</span>
+  <span class="maxi hightlightTxt">+</span>
         <!-- the whiteboard widget will be shown inside this element -->
         <div id="wrapper" style="width: 80%; height: 80%;"></div>
 
@@ -67,6 +77,9 @@
 
 <div id="se">
 	<h2>Video Chat</h2>
+  <span class="close hightlightTxt">x</span>
+  <span class="mini hightlightTxt">-</span>
+  <span class="maxi hightlightTxt">+</span>  
 </div>
 
 </div>
