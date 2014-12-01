@@ -1,3 +1,6 @@
+// simple-todos.js
+Tasks = new Mongo.Collection("tasks");
+
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
@@ -14,18 +17,13 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     }
   });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+    
+    
+  // At the bottom of the client code
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
   });
-}
 
-// simple-todos.js
-Tasks = new Mongo.Collection("tasks");
-
-if (Meteor.isClient) {
   // This code only runs on the client
   Template.body.helpers({
     tasks: function () {
@@ -70,10 +68,10 @@ window.load = function() {
  }
 }
 
+}
 
-// At the bottom of the client code
-Accounts.ui.config({
-  passwordSignupFields: "USERNAME_ONLY"
-});
-
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    // code to run on server at startup
+  });
 }
