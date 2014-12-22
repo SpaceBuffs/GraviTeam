@@ -76,19 +76,33 @@ if (Meteor.isClient) {
     }
   });
 
+//Template.login.rendered = function() {
+//  Accounts._loginButtonsSession.set('dropdownVisible', true);
+//  $("#login-sign-in-link").hide();
+//};
+
   // At the bottom of the client code
   Accounts.ui.config({
     passwordSignupFields: "USERNAME_ONLY"
+    //forbidClientAccountCreation: true
   });
-
 }
-
 //--------------------------------------------------------------
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+    //initialize a test account
+    //Accounts.createUser({username: "test4", email: "test4@test.com", password: "123456"});
+    //Accounts.loginButtonsSession.set('dropdownVisible', true);
   });
+
+  //Since users will automatically have accounts created for them, 
+  //Don't let people create accounts!
+  Accounts.config({
+    forbidClientAccountCreation: true,
+  });
+
 }
 
 //--------------------------------------------------------------

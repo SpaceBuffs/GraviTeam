@@ -26,7 +26,10 @@
   {{> Dashboard }}
 {{else}} 
   Please Log-In to add or edit the Mission Timeline.<p></p>
-  {{> loginButtons }}
+  Try using: test@test.com with pw 'test123'<p></p>
+  <div id="login-screen">
+    {{> loginButtons }}
+  </div>
 {{/if}}
 <p></p>
 </body>
@@ -59,7 +62,7 @@
       <h2>Timeline - Add an Event</h2>
 
       <p></p>
-      {{#if currentUser}}Logged in as {{currentUser.email}}.
+      {{#if currentUser}}Logged in as {{currentUser}}.
       {{else}}not logged-in.{{/if}}
       
 
