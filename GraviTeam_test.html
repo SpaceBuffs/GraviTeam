@@ -22,17 +22,12 @@
 <!-- **************************************************************************************** -->
 
 <body>
-<!-- {{#if currentUser}} -->
-	{{> Dashboard }}
-	Logged in as {{currentUser.username}}.
-<!--{{else}}
-     Please Log-In to add or edit the Mission Timeline.<p></p>
-	{{> login }}
-	{{> register }}
-	<p></p>
-	{{> loginButtons }}
+{{#if currentUser}}
+  {{> Dashboard }}
+{{else}} 
+  Please Log-In to add or edit the Mission Timeline.<p></p>
+  {{> loginButtons }}
 {{/if}}
--->
 <p></p>
 </body>
 
@@ -56,14 +51,17 @@
 <template name="Dashboard">
 	<div id="header"><h1>GraviTeam: Cassini</h1></div>
     <div id="nav"><a href="#">3D Model</a> | <a href="#">Timeline Event</a> | <a href="#">Whiteboard</a> | 
-	 <a href="#">Video chat</a> | <a href="#" class="logout">Log-Out</a></div>
+	 <a href="#">Video chat</a> | {{> loginButtons align="right"}}
+   </div>
  
 <!-- <div class="container">-->
 	<div id="ne"> 
       <h2>Timeline - Add an Event</h2>
 
       <p></p>
-      Logged in as {{currentUser.username}}.
+      {{#if currentUser}}Logged in as {{currentUser.email}}.
+      {{else}}not logged-in.{{/if}}
+      
 
       <form class="new-event">
         <input type="text" name="text" placeholder="Event Name" /><br>
