@@ -12,12 +12,21 @@ github - push to the repo
  1005  meteor deploy sierraflynn.meteor.com
 
 github - pull from the repo
+git checkout master
 git pull
 
 github - merge
 git add *
 git commit -a -m ""
-git push
+git pull
+manually look in the files with conflicts and edit them
+git push -u origin master
 
 meteor - add a database element
 meteor add accounts-ui accounts-password
+
+github branching:
+git checkout -b Sierra_branch
+git branch (to check)
+git push -u origin Sierra_branch
+

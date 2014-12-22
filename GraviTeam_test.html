@@ -1,6 +1,7 @@
 <!-- GraviTeam_test.html -->
 <!-- SpaceBuffs 2014 -->
 <!-- This is our main html file for our web app -->
+<!-- **************************************************************************************** -->
 
 <head>
   <title>GraviTeam</title>
@@ -18,59 +19,67 @@
 <link rel="stylesheet" type="text/css" href="https://awwapp.com/static/1.0/aww.css"/>
 
 </head>
+<!-- **************************************************************************************** -->
 
 <body>
-	<header>
-		<h1>GraviTeam: Cassini</h1>
-		<!-- FIX THIS! -->
-        <!--<login-buttons> LogIn </login-buttons>-->
-		{{> loginButtons }}
-	</header>
+<!-- {{#if currentUser}} -->
+	{{> Dashboard }}
+	Logged in as {{currentUser.username}}.
+<!--{{else}}
+     Please Log-In to add or edit the Mission Timeline.<p></p>
+	{{> login }}
+	{{> register }}
+	<p></p>
+	{{> loginButtons }}
+{{/if}}
+-->
+<p></p>
+</body>
 
-    <nav>
-        <a href="#">3D Model</a> | <a href="#">Timeline Event</a> | <a href="#">Whiteboard</a> | <a href="#">Video chat</a>  <a href="#"><div align="right">Log-In</a> / <a href="#">Log-Out</div></a>
-    </nav>
+<!-- ********************************** TEMPLATES ************************************ -->
+<template name="login">
+    <form id="login-form" action="action">
+        E-mail: <input type="email" id="login-email"/><p></p>
+        Password: <input type="password" id="login-password"/><p></p>
+        <input type="submit" id="login-button" value="Sign in"/>
+   </form> 
+</template>
+
+<template name="register">
+    <form id="register-form" action="action">
+       E-mail: <input type="email" id="account-email"/><p></p>
+       Password: <input type="password" id="account-password"/><p></p>
+       <input type="submit" id="create-account" value="Create an Account"/>
+   </form>
+</template>
+
+<template name="Dashboard">
+	<div id="header"><h1>GraviTeam: Cassini</h1></div>
+    <div id="nav"><a href="#">3D Model</a> | <a href="#">Timeline Event</a> | <a href="#">Whiteboard</a> | 
+	 <a href="#">Video chat</a> | <a href="#" class="logout">Log-Out</a></div>
  
-<div class="container">
+<!-- <div class="container">-->
 	<div id="ne"> 
       <h2>Timeline - Add an Event</h2>
 
-      {{#if currentUser}}<p></p>
+      <p></p>
       Logged in as {{currentUser.username}}.
 
       <form class="new-event">
         <input type="text" name="text" placeholder="Event Name" /><br>
         <input type="text" name="text" placeholder="Activities" /><br>
         <input type="text" name="text" placeholder="Instrument" /><br>
-
       </form>
-
-		<span class="close hightlightTxt">x</span>
-		<span class="mini hightlightTxt">-</span>
-		<span class="maxi hightlightTxt">+</span>  
-
-
-      {{else}}
-      Please Log-In to add or edit the Mission Timeline.<p></p>
-      {{/if}}
-     
 	</div>
 
 <div id="nw">
 	<h2>3D Model</h2><p></p>
-        <span class="close hightlightTxt">x</span>
-        <span class="mini hightlightTxt">-</span>
-        <span class="maxi hightlightTxt">+</span>
-        <p>Click on the image to enlarge.</p>
         <a target="popup" onclick="window.open('http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg','name','width=569,height=427')">
 		<img src="http://saturn.jpl.nasa.gov/operations/images/cassini_today1.jpg" width="50%" height="80%"></a>
 </div>
 
 <div id="sw">
 	<!-- <h2>Whiteboard</h2><p></p> -->
-  <span class="close hightlightTxt">x</span>
-  <span class="mini hightlightTxt">-</span>
-  <span class="maxi hightlightTxt">+</span>
         <!-- the whiteboard widget will be shown inside this element -->
         <div id="wrapper" style="width: 80%; height: 80%;"></div>
 
@@ -85,18 +94,18 @@
 
 <div id="se">
 	<h2>Chat</h2>
-  <span class="close hightlightTxt">x</span>
-  <span class="mini hightlightTxt">-</span>
-  <span class="maxi hightlightTxt">+</span>  
-
 </div>
 
-</div>
+<!-- </div> -->
 
-<!-- <timeline>
+<div id="timeline">
 	<h2>Timeline</h2><p></p>
 	<HR WIDTH="75%" COLOR="#FF0000" SIZE="4">
-</timeline>
--->
+</div>
+</template>
 
-</body> 
+<template name="Window Control">
+		<span class="close hightlightTxt">x</span>
+		<span class="mini hightlightTxt">-</span>
+		<span class="maxi hightlightTxt">+</span> 
+</template>
